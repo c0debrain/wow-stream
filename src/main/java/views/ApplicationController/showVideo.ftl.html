@@ -1,0 +1,38 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "Home page" "videos">    
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <h4 class="page-header"> Show Video </h4>
+            <video id="video_1" width="640" height="360" 
+                   style="width:640;height:360" poster="/file/${file.thumbPath}"
+                    controls="controls" preload="auto" autoplay="autoplay">
+                 <source src="/file/${file.filePath}" type="video/mp4" />
+                 Your browser does not support the video tag. //add this line
+             </video>
+        </div>
+        
+        <div class="col-lg-4 col-sm-4 hidden-sm hidden-xs">
+            <h4 class="page-header"> Related </h4>
+            
+        </div>
+    </div>
+    
+    <h4 class="page-header">Comments</h4>
+    
+    
+    <script>
+        $(function() {
+            $('#video_1').mediaelementplayer({
+                defaultVideoWidth:640,
+                defaultVideoHeight:360
+            });
+            $("#video_1").addClass("img img-responsive");
+        });
+    </script>
+  
+</div>
+
+</@layout.myLayout>

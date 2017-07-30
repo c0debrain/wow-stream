@@ -1,0 +1,18 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "Home page" "upload">    
+
+<div class="container">
+    <h4 class="page-header"> Upload media </h4>
+    
+    <form method="post" enctype="multipart/form-data" action="/processUpload" role="form">
+        <label>Title</label>
+        <input type="text" id="name" name="name" required="true"
+               class="form-control"/> <br/>
+        Please specify mp4 file to upload (required):
+        <input type="file" name="mp4file" required="true"><br />
+        Please specify cover image file to upload (required):
+        <input type="file" name="imgfile" required="true"><br />
+        <button type="submit" value="submit" class="btn btn-warning">Upload file</button>
+    </form>
+</div>
+</@layout.myLayout>

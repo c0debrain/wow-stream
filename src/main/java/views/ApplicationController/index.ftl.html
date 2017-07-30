@@ -1,0 +1,46 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "Home page" "home">    
+
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+            <div class="container-fluid">
+                <div class="carousel-caption">
+                    <h1>Start your own media streaming site.</h1>
+                    <p><code>One file, one URL, view anywhere!</code></p>
+                    <img class="img img-responsive" style="display:inline;" 
+                         src="/assets/img/browser-icons.png"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.carousel -->
+
+
+<!-- Begin page content -->
+<div class="container">
+  <h4 class="page-header">Recent</h4>
+
+    <div class="row">
+        <#list files as file>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-default panel-thumb">
+                <a href="/video/${file.id}">
+                    <img class="featurette-image img-responsive" 
+                         src="/file/${file.thumbPath}"
+                         
+                    alt="Generic placeholder image"/>
+                    <h5> ${file.name}</h5>
+                </a>
+            </div>
+	</div>
+        </#list>
+    </div>
+
+</div>
+</@layout.myLayout>
